@@ -14,16 +14,16 @@ const Checkout = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [processingPayment, setProcessingPayment] = useState(false);
 
-  useEffect(() => {
-    gsap.from('.checkout-item', {
-      y: 20,
-      opacity: 0,
-      stagger: 0.1,
-      duration: 0.6,
-      ease: 'power2.out',
-      delay: 0.2
-    });
-  }, []);
+  // useEffect(() => {
+  //   gsap.from('.checkout-item', {
+  //     y: 20,
+  //     opacity: 0,
+  //     stagger: 0.1,
+  //     duration: 0.6,
+  //     ease: 'power2.out',
+  //     delay: 0.2
+  //   });
+  // }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -58,7 +58,7 @@ const Checkout = () => {
       
       if (paymentMethod === 'cod') {
         // Cash on Delivery - process order directly
-        const response = await fetch('/api/place-order', {
+        const response = await fetch('/api/placeorder', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

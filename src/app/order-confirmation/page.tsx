@@ -1,18 +1,19 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useParams, useRouter } from 'next/navigation'; // Changed import to next/navigation
 import { CheckCircle, ShoppingBag, XCircle } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
 import { toast } from 'sonner';
 import Link from 'next/link';
 
-const OrderConfirmation = () => {
+const OrderConfirmation = ({searchParams }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
   const { clearCart } = useCart();
   const router = useRouter();
-  const { session_id } = router.query;
 
+  const { session_id } = searchParams;// Use useParams hook to get session_id from params
+console.log(session_id)
   useEffect(() => {
     const verifyPayment = async () => {
       if (!session_id) {
@@ -30,7 +31,7 @@ const OrderConfirmation = () => {
           const orderDetails = JSON.parse(localStorage.getItem('currentOrderDetails') || '{}');
           localStorage.removeItem('currentOrderDetails');
           
-          await fetch('/api/place-order', {
+          await fetch('/api/placeorder', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
