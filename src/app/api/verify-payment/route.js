@@ -1,10 +1,8 @@
 
 import Stripe from 'stripe';
 
-export default async function handler(req, res) {
-  if (req.method !== 'GET') {
-    return res.status(405).json({ message: 'Method not allowed' });
-  }
+export default async function POST(req, res) {
+
 
   try {
     const { session_id } = req.query;
