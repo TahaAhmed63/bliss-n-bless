@@ -1,11 +1,9 @@
-
 import Stripe from 'stripe';
+import { NextResponse } from 'next/server';
 
-export default async function POST(req, res) {
-
-
+export async function POST(req) {
   try {
-    const { orderDetails } = req.body;
+    const { orderDetails } = await req.json();
     
     // Initialize Stripe with your secret key
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_51OnMG5D3dsM4GvDNJzN9tvy8SVVQld50y4TkZzJprrEihsu6RRUf4VCQJpBYZp3hHlZwXAh3fysJPJMbfdXAoChD00iLEjBSvk');
@@ -57,8 +55,8 @@ export default async function POST(req, res) {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-      success_url: `${req.headers.origin}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.origin}/checkout?canceled=true`,
+      success_url: `${req.headers.get('origin')}/order-confirmation?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${req.headers.get('origin')}/checkout?canceled=true`,
       customer_email: orderDetails.customer.email,
       metadata: {
         orderId: orderDetails.date, // Using date as a simple order ID
@@ -69,9 +67,9 @@ export default async function POST(req, res) {
       },
     });
 
-    res.status(200).json({ id: session.id, url: session.url });
+    return NextResponse.json({ id: session.id, url: session.url });
   } catch (error) {
     console.error('Payment session error:', error);
-    res.status(500).json({ error: error.message });
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }

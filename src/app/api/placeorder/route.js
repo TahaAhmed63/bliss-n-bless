@@ -1,10 +1,9 @@
 import { createTransport } from 'nodemailer';
+import { NextResponse } from 'next/server';
 
-export default async function POST(req, res) {
-
-
+export async function POST(req) {
   try {
-    const orderData = req.body;
+    const orderData = await req.json();
     
     // Setup email transporter
     const transporter = createTransport({
@@ -119,9 +118,9 @@ export default async function POST(req, res) {
     
     // For real implementation, you might want to store the order in a database here
     
-    res.status(200).json({ success: true, message: 'Order placed successfully' });
+    return NextResponse.json({ success: true, message: 'Order placed successfully' });
   } catch (error) {
     console.error('Order placement error:', error);
-    res.status(500).json({ success: false, message: 'Failed to place order' });
+    return NextResponse.json({ success: false, message: 'Failed to place order' }, { status: 500 });
   }
 }

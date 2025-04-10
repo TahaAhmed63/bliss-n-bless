@@ -1,14 +1,12 @@
-
 import Stripe from 'stripe';
+import { NextResponse } from 'next/server';
 
-export default async function POST(req, res) {
-
-
+export async function POST(req) {
   try {
-    const { session_id } = req.query;
+    const { session_id } = await req.json();
     
     if (!session_id) {
-      return res.status(400).json({ error: 'Missing session ID' });
+      return NextResponse.json({ error: 'Missing session ID' }, { status: 400 });
     }
     
     // Initialize Stripe
@@ -18,20 +16,20 @@ export default async function POST(req, res) {
     const session = await stripe.checkout.sessions.retrieve(session_id);
     
     if (session.payment_status === 'paid') {
-      return res.status(200).json({ 
+      return NextResponse.json({ 
         success: true, 
         customer: session.customer_details,
         paymentId: session.payment_intent,
         paymentStatus: session.payment_status
       });
     } else {
-      return res.status(200).json({ 
+      return NextResponse.json({ 
         success: false, 
         paymentStatus: session.payment_status 
       });
     }
   } catch (error) {
     console.error('Payment verification error:', error);
-    res.status(500).json({ success: false, error: error.message });
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
