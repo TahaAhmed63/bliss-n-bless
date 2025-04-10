@@ -28,6 +28,7 @@ console.log(session_id)
         const data = await response.json();
         
         if (data.success) {
+
           const orderDetails = JSON.parse(localStorage.getItem('currentOrderDetails') || '{}');
           localStorage.removeItem('currentOrderDetails');
           
@@ -46,6 +47,7 @@ console.log(session_id)
           setOrderConfirmed(true);
           clearCart();
           toast.success("Order placed successfully!");
+          router.push('/');
         } else {
           toast.error("Payment was not completed successfully");
           router.push('/checkout');

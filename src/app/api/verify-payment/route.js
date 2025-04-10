@@ -1,10 +1,12 @@
 import Stripe from 'stripe';
 import { NextResponse } from 'next/server';
 
-export async function POST(req) {
+export async function GET(req) {
   try {
-    const { session_id } = await req.json();
+    // Use req.nextUrl to get the session_id from query parameters
+    const session_id = req.nextUrl.searchParams.get('session_id');
     
+    console.log(session_id);
     if (!session_id) {
       return NextResponse.json({ error: 'Missing session ID' }, { status: 400 });
     }
