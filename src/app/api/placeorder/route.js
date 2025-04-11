@@ -46,11 +46,11 @@ export async function POST(req) {
               </tr>
               <tr>
                 <td style="padding: 10px 0;">Shipping</td>
-                <td style="text-align: right;">$${orderData.shipping.toFixed(2)}</td>
+                <td style="text-align: right;">$${orderData?.shipping ? orderData.shipping.toFixed(2):""}</td>
               </tr>
               <tr>
                 <td style="padding: 10px 0;">Tax</td>
-                <td style="text-align: right;">$${orderData.tax.toFixed(2)}</td>
+                <td style="text-align: right;">$${orderData?.tax ? orderData?.tax.toFixed(2):""}</td>
               </tr>
               <tr style="font-weight: bold;">
                 <td style="padding: 10px 0; border-top: 2px solid #eee;">Total</td>

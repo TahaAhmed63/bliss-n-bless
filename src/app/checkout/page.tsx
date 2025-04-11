@@ -50,9 +50,9 @@ const Checkout = () => {
         items: cart,
         paymentMethod,
         subtotal: totalPrice,
-        shipping: 15,
-        tax: totalPrice * 0.07,
-        total: totalPrice + 15 + (totalPrice * 0.07),
+        // shipping: 15,
+        // tax: totalPrice * 0.07,
+        total: totalPrice, //+ 15 + (totalPrice * 0.07),
         date: new Date().toISOString(),
       };
       
@@ -212,7 +212,7 @@ const Checkout = () => {
                 </div>
                 <div className="flex justify-between mb-2">
                   <span className="text-gray-400">Tax</span>
-                  <span className="text-gray-200">${(totalPrice * 0.07).toFixed(2)}</span>
+                  {/* <span className="text-gray-200">${(totalPrice * 0.07).toFixed(2)}</span> */}
                 </div>
                 <div className="flex justify-between border-t border-luxury-gray pt-2 mt-2">
                   <span className="text-lg">Total</span>
