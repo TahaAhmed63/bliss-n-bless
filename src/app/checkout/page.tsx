@@ -311,7 +311,7 @@ const Checkout = () => {
                 
                 <div className="mb-8">
                   <RadioGroup 
-                    defaultValue="card"
+                    defaultValue="cod"
                     value={paymentMethod}
                     onValueChange={(value) => setPaymentMethod(value as 'card' | 'cod')}
                     className="flex flex-col space-y-4"
