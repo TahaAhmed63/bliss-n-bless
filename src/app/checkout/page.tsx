@@ -316,7 +316,7 @@ const Checkout = () => {
                     onValueChange={(value) => setPaymentMethod(value as 'card' | 'cod')}
                     className="flex flex-col space-y-4"
                   >
-                    <div className="flex items-center space-x-3">
+                    {/* <div className="flex items-center space-x-3">
                       <RadioGroupItem value="card" id="card" />
                       <label htmlFor="card" className="text-sm font-medium flex items-center">
                         <CreditCard className="h-4 w-4 mr-2" />
@@ -325,7 +325,7 @@ const Checkout = () => {
                           Secure Payment
                         </span>
                       </label>
-                    </div>
+                    </div> */}
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="cod" id="cod" />
                       <label htmlFor="cod" className="text-sm font-medium">
