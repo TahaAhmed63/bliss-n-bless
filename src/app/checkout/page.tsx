@@ -335,7 +335,7 @@ const Checkout = () => {
                   </RadioGroup>
                 </div>
                 
-                {paymentMethod === 'card' && (
+                {/* {paymentMethod === 'card' && (
                   <div className="mb-6">
                     <div className="bg-luxury-gray/50 p-4 rounded border border-luxury-light text-sm">
                       <p className="text-gray-300">
@@ -353,7 +353,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 )}
-                
+                 */}
                 {paymentMethod === 'cod' && (
                   <div className="mb-6">
                     <div className="bg-luxury-gray/50 p-4 rounded border border-luxury-light text-sm">
