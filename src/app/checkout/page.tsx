@@ -10,7 +10,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const Checkout = () => {
   const { cart, removeFromCart, updateQuantity, totalPrice, clearCart } = useCart();
-  const [paymentMethod, setPaymentMethod] = useState<'card' | 'cod'>('card');
+  const [paymentMethod, setPaymentMethod] = useState<'card' | 'cod'>('cod'); // Default to 'cod'
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [processingPayment, setProcessingPayment] = useState(false);
 
@@ -311,13 +311,13 @@ const Checkout = () => {
                 
                 <div className="mb-8">
                   <RadioGroup 
-                    defaultValue="cod"
+                    defaultValue="cod" // Default to 'cod'
                     value={paymentMethod}
                     onValueChange={(value) => setPaymentMethod(value as 'card' | 'cod')}
                     className="flex flex-col space-y-4"
                   >
-                    {/* <div className="flex items-center space-x-3">
-                      <RadioGroupItem value="card" id="card" />
+                    <div className="flex items-center space-x-3 hidden">
+                      <RadioGroupItem value="card" id="card" disabled/> {/* Disable card option */}
                       <label htmlFor="card" className="text-sm font-medium flex items-center">
                         <CreditCard className="h-4 w-4 mr-2" />
                         Credit/Debit Card
@@ -325,7 +325,7 @@ const Checkout = () => {
                           Secure Payment
                         </span>
                       </label>
-                    </div> */}
+                    </div>
                     <div className="flex items-center space-x-3">
                       <RadioGroupItem value="cod" id="cod" />
                       <label htmlFor="cod" className="text-sm font-medium">
@@ -335,7 +335,7 @@ const Checkout = () => {
                   </RadioGroup>
                 </div>
                 
-                {/* {paymentMethod === 'card' && (
+                {paymentMethod === 'card' && (
                   <div className="mb-6">
                     <div className="bg-luxury-gray/50 p-4 rounded border border-luxury-light text-sm">
                       <p className="text-gray-300">
@@ -353,7 +353,7 @@ const Checkout = () => {
                     </div>
                   </div>
                 )}
-                 */}
+                
                 {paymentMethod === 'cod' && (
                   <div className="mb-6">
                     <div className="bg-luxury-gray/50 p-4 rounded border border-luxury-light text-sm">
