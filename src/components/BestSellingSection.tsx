@@ -8,9 +8,9 @@ import { products } from '../data/products';
 
 // Get one product from each category
 const getBestSellingProducts = () => {
-  const mensProduct = products.find(p => p.categories.includes('Woody') && p.imageSrc.includes('608528577891'));
-  const womensProduct = products.find(p => p.categories.includes('Floral') && p.imageSrc.includes('617184003107'));
-  const arabicProduct = products.find(p => p.categories.includes('Oriental') && p.imageSrc.includes('547887537'));
+  const mensProduct = products.find(p => p.categories.includes('Woody') );
+  const womensProduct = products.find(p => p.categories.includes('Floral'));
+  const arabicProduct = products.find(p => p.categories.includes('Oriental') );
 
   return [
     {

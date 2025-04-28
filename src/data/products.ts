@@ -7,7 +7,7 @@ export const products: Product[] = [
     tagline: "A Journey Into Opulence and Tradition",
     description: "Step into a world of luxury, culture, and sensuality with our nano-encapsulated Mukhallat Inspired Perfume. A fragrance that takes you on an aromatic journey, blending the richness of traditional Arabic notes with modern elegance. This Oriental masterpiece is a symphony of oud, florals, spices, and sweet notes, creating a luxurious, deep, and balanced scent that connects you to an ancient heritage while offering an experience of pure indulgence.",
     price: 280,
-    imageSrc: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=80&w=1974&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (38).png",
     fragranceNotes: {
       top: ["Oud (Agarwood)", "Rose", "Saffron", "Amber"],
       middle: ["Musk", "Sandalwood", "Patchouli"],
@@ -38,7 +38,7 @@ export const products: Product[] = [
     tagline: "A Fragrance That Evokes Elegance and Intimacy",
     description: "Step into a world of timeless beauty and personal connection with APOM (A Part of Me), a nano-encapsulated fragrance that embodies warmth, sensuality, and sophisticated grace. A perfect balance of bright florals and deep, grounding woods, this scent envelops you in a comforting embrace while offering a luminous, radiant presence.",
     price: 250,
-    imageSrc: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=2070&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (42).png",
     fragranceNotes: {
       top: ["Orange Blossom", "Bergamot", "Neroli"],
       middle: ["Ylang-Ylang", "Jasmine", "Lavender"],
@@ -69,7 +69,7 @@ export const products: Product[] = [
     tagline: "The Essence of Timeless Elegance",
     description: "Embrace the iconic sophistication of Chanel No. 5, a fragrance that defines luxury, confidence, and grace. With its signature floral, powdery, and aldehydic scent, this perfume captures the essence of timeless femininity and enduring elegance.",
     price: 300,
-    imageSrc: "https://images.unsplash.com/photo-1619994403073-2256c0835ba1?q=80&w=2070&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (43).png",
     fragranceNotes: {
       top: ["Neroli", "Lemon"],
       middle: ["Jasmine Absolute", "Rose Absolute", "Ylang Ylang"],
@@ -100,7 +100,7 @@ export const products: Product[] = [
     tagline: "Where Timeless Elegance Meets Modern Confidence",
     description: "Step into the world of Miss Dior, a fragrance that encapsulates feminine grace, romantic optimism, and sophistication. Inspired by the iconic scent, this perfume blends floral, citrus, and woody notes to create a balanced composition that is both youthful and timeless.",
     price: 270,
-    imageSrc: "https://images.unsplash.com/photo-1608528577891-eb055944f2e7?q=80&w=1974&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (44).png",
     fragranceNotes: {
       top: ["Bergamot", "Sweet Orange", "Lemon"],
       middle: ["Rose Absolute", "Jasmine Absolute", "Ylang Ylang"],
@@ -130,7 +130,7 @@ export const products: Product[] = [
     tagline: "A Fragrance of Warmth, Mystery, and Empowerment",
     description: "Step into a world where luxury, sophistication, and ethereal beauty blend harmoniously. Kurdijan is a fragrance that captures the essence of Middle Eastern heritage, offering a rich, complex experience that evokes feelings of warmth, strength, and deep connection to nature.",
     price: 290,
-    imageSrc: "https://images.unsplash.com/photo-1617184003107-0df15fea4903?q=80&w=2070&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (37).png",
     fragranceNotes: {
       top: ["Saffron", "Bergamot", "Bitter Almond"],
       middle: ["Rose Absolute", "Jasmine Absolute", "Ylang Ylang"],
@@ -157,7 +157,7 @@ export const products: Product[] = [
     tagline: "Embrace the Boldness of Opulence and Intrigue",
     description: "Indulge in the luxurious complexity of Noir Extreme, a fragrance that blends spicy, woody, and sweet notes to create an unforgettable scent experience. Perfectly balanced between boldness and elegance, this fragrance is for those who dare to stand out and embrace their inner allure.",
     price: 310,
-    imageSrc: "https://images.unsplash.com/photo-1557170334-a9086d21c4a1?q=80&w=2036&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (39).png",
     fragranceNotes: {
       top: ["Bergamot", "Cardamom", "Saffron"],
       middle: ["Rose Absolute", "Nutmeg", "Cinnamon", "Oud"],
@@ -187,7 +187,7 @@ export const products: Product[] = [
     tagline: "A Classic Scent of Confidence and Sophistication",
     description: "Step into a world of elegance, strength, and timeless appeal with the Hugo Boss Inspired Perfume for Men. This fragrance combines fresh, woody, and spicy notes to create a sophisticated yet energizing experience. Perfect for the modern man who exudes confidence and self-assurance.",
     price: 260,
-    imageSrc: "https://images.unsplash.com/photo-1592914610354-fd354ea45e48?q=80&w=1974&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (38).png",
     fragranceNotes: {
       top: ["Green Apple", "Bergamot", "Grapefruit"],
       middle: ["Lavender", "Cinnamon", "Clove"],
@@ -216,7 +216,7 @@ export const products: Product[] = [
     tagline: "A Fragrance of Elegance, Strength, and Timeless Beauty",
     description: "Embrace the elegance, confidence, and sophistication that define the modern woman with the Hugo Boss Inspired Perfume for Women. This nano-encapsulated fragrance combines floral, fruity, and woody notes to create a captivating and empowering scent.",
     price: 270,
-    imageSrc: "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=2070&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (39).png",
     fragranceNotes: {
       top: ["Green Apple", "Grapefruit", "Bergamot"],
       middle: ["Rose", "Jasmine", "Lily of the Valley"],
@@ -245,7 +245,7 @@ export const products: Product[] = [
     tagline: "A Fragrance of Mystery, Elegance, and Unforgettable Allure",
     description: "Step into the world of sophistication, mystery, and sensuality with the Noir Inspired Perfume. This fragrance combines spicy, woody, and amber notes to create a captivating, warm, and unforgettable scent. Perfect for those who wish to make a bold statement and leave a lasting impression.",
     price: 290,
-    imageSrc: "https://images.unsplash.com/photo-1619994403073-2256c0835ba1?q=80&w=2070&auto=format&fit=crop",
+    imageSrc: "/lovable-uploads/New Project (38).png",
     fragranceNotes: {
       top: ["Bergamot", "Pink Pepper", "Cardamom"],
       middle: ["Rose", "Jasmine", "Cinnamon"],
