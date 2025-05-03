@@ -3,37 +3,46 @@ import React, { useEffect, useRef } from 'react';
 import { Product } from '../types/product';
 import { ArrowRight } from 'lucide-react';
 import gsap from 'gsap';
-import  Link  from 'next/link'; // Changed to use Next.js Link
+import Link from 'next/link';
 import { products } from '../data/products';
 
 // Get one product from each category
 const getBestSellingProducts = () => {
-  const mensProduct = products.find(p => p.categories.includes('Woody') );
-  const womensProduct = products.find(p => p.categories.includes('Floral'));
-  const arabicProduct = products.find(p => p.categories.includes('Oriental') );
+  // Find products with bestselling flags
+  const mensProduct = products.find(p => p.isMensBestSelling === true);
+  const womensProduct = products.find(p => p.isWomensBestSelling === true);
+  const arabicProduct = products.find(p => p.isArabicBestSelling === true);
+
+  // Fallback products from categories if no flags are set
+  const fallbackMens = mensProduct || products.find(p => p.variants && p.variants.length > 0);
+  const fallbackWomens = womensProduct || products.find(p => p.categories.includes('Floral'));
+  const fallbackArabic = arabicProduct || products.find(p => p.categories.includes('Oriental') && p.id !== mensProduct?.id);
 
   return [
     {
       id: 'mens',
       title: "Men's Best Selling Perfume",
       description: "Sophisticated and powerful fragrances crafted for the modern gentleman.",
-      image: mensProduct?.imageSrc || "https://images.unsplash.com/photo-1608528577891-eb055944f2e7?q=80&w=1974&auto=format&fit=crop",
-      product: mensProduct || products[3] // Fallback to product id 4
+      image: fallbackMens?.imageSrc || "https://images.unsplash.com/photo-1608528577891-eb055944f2e7?q=80&w=1974&auto=format&fit=crop",
+      product: fallbackMens || products[0],
+      hasVariants: !!(fallbackMens?.variants && fallbackMens.variants.length > 0)
     },
     {
       id: 'womens',
       title: "Women's Best Selling Perfume",
       description: "Elegant and captivating scents designed for unforgettable impressions.",
-      image: womensProduct?.imageSrc || "https://images.unsplash.com/photo-1617184003107-0df15fea4903?q=80&w=2070&auto=format&fit=crop",
-      product: womensProduct || products[4] // Fallback to product id 5
+      image: fallbackWomens?.imageSrc || "https://images.unsplash.com/photo-1617184003107-0df15fea4903?q=80&w=2070&auto=format&fit=crop",
+      product: fallbackWomens || products[1],
+      hasVariants: !!(fallbackWomens?.variants && fallbackWomens.variants.length > 0)
     },
-    {
-      id: 'arabic',
-      title: "Arabic Ether",
-      description: "Exotic and luxurious fragrances with rich oud and spices from the East.",
-      image: arabicProduct?.imageSrc || "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=2070&auto=format&fit=crop",
-      product: arabicProduct || products[1] // Fallback to product id 2
-    }
+    // {
+    //   id: 'arabic',
+    //   title: "Arabic Ether",
+    //   description: "Exotic and luxurious fragrances with rich oud and spices from the East.",
+    //   image: fallbackArabic?.imageSrc || "https://images.unsplash.com/photo-1547887537-6158d64c35b3?q=80&w=2070&auto=format&fit=crop",
+    //   product: fallbackArabic || products[2],
+    //   hasVariants: !!(fallbackArabic?.variants && fallbackArabic.variants.length > 0)
+    // }
   ];
 };
 
@@ -84,7 +93,7 @@ const BestSellingSection: React.FC<BestSellingSectionProps> = ({ onProductSelect
   return (
     <section ref={sectionRef} className="py-16 bg-luxury-dark">
       <div className="luxury-container">
-        <h2 ref={titleRef} className="text-3xl md:text-4xl font-cormorant font-semi-bold mb-12 text-center opacity-0">
+        <h2 ref={titleRef} className="text-3xl md:text-4xl font-cormorant font-bold mb-12 text-center opacity-0">
           <span className="inline-block relative">
             Best Selling Products
             <span className="absolute -bottom-2 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-gold to-transparent"></span>
@@ -113,12 +122,18 @@ const BestSellingSection: React.FC<BestSellingSectionProps> = ({ onProductSelect
                 <h3 className="text-2xl font-cormorant font-semibold text-white mb-2">{item.title}</h3>
                 <p className="text-sm text-gray-300 mb-4">{item.description}</p>
                 
-                {/* Price tag */}
+                {/* Price tag and variants badge */}
                 {item.product && (
-                  <div className="mb-4">
+                  <div className="mb-4 flex items-center gap-2">
                     <span className="inline-block bg-gold/90 text-black text-sm px-3 py-1 rounded">
                       ${item.product.price}
                     </span>
+                    
+                    {item.hasVariants && (
+                      <span className="inline-block bg-luxury-gray/60 text-gold text-xs px-2 py-1 rounded border border-gold/30">
+                        Multiple Variants
+                      </span>
+                    )}
                   </div>
                 )}
                 
@@ -134,7 +149,7 @@ const BestSellingSection: React.FC<BestSellingSectionProps> = ({ onProductSelect
                   </button>
                   
                   <Link 
-                    href="/shop" // Changed to use Next.js Link
+                    href="/shop" 
                     className="inline-flex items-center text-gold hover:text-gold-light transition-colors"
                     onClick={(e) => e.stopPropagation()}
                   >

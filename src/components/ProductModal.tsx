@@ -1,25 +1,35 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
-import { Product } from '../types/product';
+import React, { useEffect, useRef, useState } from 'react';
+import { Product, ProductVariant } from '../types/product';
 import { X } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { cn } from '@/lib/utils';
 import gsap from 'gsap';
 import { useIsMobile } from '@/hooks/use-mobile';
+import ProductVariantSelector from './ProductVariantSelector';
+import Image from 'next/image';
 
 interface ProductModalProps {
   product: Product;
   onClose: () => void;
 }
 
-const ProductModal = ({ product, onClose }: ProductModalProps) => {
+const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
   const { addToCart } = useCart();
   const modalRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
-  const [quantity, setQuantity] = React.useState(1);
+  const [quantity, setQuantity] = useState(1);
   const isMobile = useIsMobile();
+  
+  const [selectedVariant, setSelectedVariant] = useState<ProductVariant | null>(null);
 
-  // Close modal on escape key
+  const currentProduct = {
+    name: selectedVariant?.name || product.name,
+    price: selectedVariant?.price || product.price,
+    imageSrc: selectedVariant?.imageSrc || product.imageSrc,
+    description: selectedVariant?.description || product.description
+  };
+
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
@@ -29,7 +39,6 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [onClose]);
 
-  // Close modal when clicking outside
   useEffect(() => {
     const handleOutsideClick = (e: MouseEvent) => {
       if (modalRef.current && !contentRef.current?.contains(e.target as Node)) {
@@ -41,7 +50,6 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
     return () => document.removeEventListener('mousedown', handleOutsideClick);
   }, [onClose]);
 
-  // Animation when modal opens
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     
@@ -58,7 +66,19 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
   }, []);
 
   const handleAddToCart = () => {
-    addToCart(product, quantity);
+    if (selectedVariant) {
+      const variantProduct = {
+        ...product,
+        id: product.id + "-" + selectedVariant.id,
+        name: selectedVariant.name,
+        price: selectedVariant.price || product.price,
+        imageSrc: selectedVariant.imageSrc || product.imageSrc,
+        description: selectedVariant.description || product.description
+      };
+      addToCart(variantProduct, quantity);
+    } else {
+      addToCart(product, quantity);
+    }
     onClose();
   };
 
@@ -89,19 +109,20 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
         </button>
         
         <div className="flex flex-col md:flex-row max-h-[90vh] overflow-hidden">
-          {/* Product image */}
           <div className="md:w-5/12 h-[200px] md:h-auto">
             <div className="h-full relative">
               <div className="absolute inset-0 bg-gradient-to-br from-luxury-black/40 via-transparent to-transparent z-10"></div>
-              <img 
-                src={product.imageSrc} 
-                alt={product.name} 
-                className="w-full h-full object-cover object-center"
+              <Image 
+                src={currentProduct.imageSrc} 
+                alt={currentProduct.name}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority
               />
             </div>
           </div>
           
-          {/* Product details */}
           <div className="md:w-7/12 p-4 md:p-6 flex flex-col overflow-y-auto" style={{ maxHeight: isMobile ? 'calc(95vh - 200px)' : '85vh' }}>
             <div>
               <div className="flex flex-wrap items-center mb-2 gap-1">
@@ -116,12 +137,26 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
               </div>
               
               <h2 className="text-2xl md:text-3xl font-semibold font-cormorant gold-gradient mb-1">
-                {product.name}
+                {currentProduct.name}
               </h2>
               
               <p className="text-gray-300 text-xs md:text-sm mb-3">{product.tagline}</p>
               
-              <p className="text-gray-400 text-xs md:text-sm mb-4">{product.description}</p>
+              <p className="text-gray-400 text-xs md:text-sm mb-4">{currentProduct.description}</p>
+
+              {product.variants && product.variants.length > 0 && (
+                <ProductVariantSelector 
+                  variants={product.variants}
+                  selectedVariant={selectedVariant}
+                  baseProduct={{
+                    name: product.name,
+                    price: product.price,
+                    imageSrc: product.imageSrc,
+                    description: product.description
+                  }}
+                  onSelectVariant={setSelectedVariant}
+                />
+              )}
               
               <div className="border-t border-luxury-gray my-3 pt-3">
                 <h4 className="text-gold text-xs font-medium mb-2">FRAGRANCE NOTES</h4>
@@ -167,33 +202,35 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
                   </div>
                 </div>
               </div>
-              {product.experience && (
-              <div className="border-t border-luxury-gray my-3 pt-3">
-                <h4 className="text-gold text-xs font-medium mb-2">THE EXPERIENCE</h4>
-                <div className="grid grid-cols-2 gap-2">
-                  {product.experience.map((exp, index) => (
-                    <div key={index} className="text-xs text-gray-300 flex items-center gap-1">
-                      <span className="text-gold">•</span> {exp}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
 
-            {/* Why Choose Section or Emotional Journey */}
-            {(product.whyChoose || product.emotionalJourney) && (
-              <div className="border-t border-luxury-gray my-3 pt-3">
-                <h4 className="text-gold text-xs font-medium mb-2">
-                  {product.whyChoose ? "WHY CHOOSE THIS FRAGRANCE" : "EMOTIONAL JOURNEY"}
-                </h4>
-                <p className="text-xs md:text-sm text-gray-300 italic">
-                  {product.whyChoose ? product.whyChoose[0] : product.emotionalJourney}
-                </p>
-              </div>
-            )}
+              {product.experience && (
+                <div className="border-t border-luxury-gray my-3 pt-3">
+                  <h4 className="text-gold text-xs font-medium mb-2">THE EXPERIENCE</h4>
+                  <div className="grid grid-cols-2 gap-2">
+                    {product.experience.map((exp, index) => (
+                      <div key={index} className="text-xs text-gray-300 flex items-center gap-1">
+                        <span className="text-gold">•</span> {exp}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {(product.whyChoose || product.emotionalJourney) && (
+                <div className="border-t border-luxury-gray my-3 pt-3">
+                  <h4 className="text-gold text-xs font-medium mb-2">
+                    {product.whyChoose ? "WHY CHOOSE THIS FRAGRANCE" : "EMOTIONAL JOURNEY"}
+                  </h4>
+                  <p className="text-xs md:text-sm text-gray-300 italic">
+                    {product.whyChoose ? product.whyChoose[0] : product.emotionalJourney}
+                  </p>
+                </div>
+              )}
+
+              {/* Price and Add to Cart Section */}
               <div className="flex justify-between items-center mb-4">
                 <span className="text-xl md:text-2xl text-gold font-cormorant font-semibold">
-                  ${product.price}
+                  ${currentProduct.price}
                 </span>
                 
                 <div className="flex items-center">
@@ -223,7 +260,7 @@ const ProductModal = ({ product, onClose }: ProductModalProps) => {
                 )}
               >
                 Add to Cart
-              </button>
+                </button>
             </div>
           </div>
         </div>

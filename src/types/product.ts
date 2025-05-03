@@ -1,6 +1,15 @@
 
+export interface ProductVariant {
+  id: string;
+  name: string;
+  price?: number;
+  description?: string;
+  imageSrc?: string;
+}
+
+
 export interface Product {
-  id: number;
+  id: number | string;
   name: string;
   tagline: string;
   description: string;
@@ -18,4 +27,9 @@ export interface Product {
   experience?: string[];
   emotionalJourney?: string;
   whyChoose?: string[];
+  variants?: ProductVariant[];
+  // Add bestselling flags
+  isMensBestSelling?: boolean;
+  isWomensBestSelling?: boolean;
+  isArabicBestSelling?: boolean;
 }

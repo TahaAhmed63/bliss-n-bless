@@ -132,7 +132,7 @@ const ProductCard = ({ product, onClick, index }: ProductCardProps) => {
         <h3 className="text-xl font-semibold text-gray-100 mb-1">{product.name}</h3>
         <p className="text-sm text-gray-400 mb-3">{product.tagline}</p>
         <div className="flex justify-between items-center">
-          <span className="text-gold font-semibold">${product.price}</span>
+          <span className="text-gold font-semibold">Rs{product.price}</span>
           <span className="text-xs uppercase tracking-wide text-gray-500">
             {product.longevity}
           </span>
