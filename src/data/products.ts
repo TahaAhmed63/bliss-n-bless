@@ -292,62 +292,161 @@ export const products: Product[] = [
   },
   {
     id: 10,
-    name: "Jasmine attar ",
-    tagline: "",
-    description: "",
+    name: "Jasmine Attar",
+    tagline: "A floral breeze of serenity.",
+    description: "Immerse yourself in the calming and sweet embrace of jasmine. This attar offers a traditional scent crafted with purity, ideal for daily wear and spiritual occasions.",
     price: 1000,
     imageSrc: "/lovable-uploads/ether.png",
     fragranceNotes: {
-      top: ["Bergamot", "Pink Pepper", "Cardamom"],
-      middle: ["Rose", "Jasmine", "Cinnamon"],
-      base: ["Amber", "Sandalwood", "Musk"]
+      top: ["Jasmine Buds"],
+      middle: ["Pure Jasmine Oil"],
+      base: ["Musk"]
     },
-    categories: ["Spicy", "Woody"],
-    longevity: "10-12 hours",
-    sillage: "Strong",
-    occasions: ["Evening", "Winter", "Formal"],
+    categories: ["Floral"],
+    longevity: "8-10 hours",
+    sillage: "Moderate",
+    occasions: ["Daily", "Spiritual", "Casual"],
     experience: [
-      "Mystical Allure",
-      "Timeless Elegance",
-      "Sensual Warmth",
-      "Bold Intrigue",
-      "Effortless Sophistication",
-      "Unforgettable Presence",
-      "Feminine Mystery",
-      "Emotional Depth"
+      "Soothing Floral Harmony",
+      "Tranquil Ambience",
+      "Natural Purity",
+      "Elegant Simplicity"
     ],
-    whyChoose: ["Noir is a statement of elegance, mystery, and sensuality. It becomes part of you with every wear, enveloping you in an unforgettable trail of luxury and emotional depth."]
-  
+    whyChoose: [
+      "Crafted from pure jasmine extracts, this attar is ideal for those who appreciate timeless floral elegance in a natural oil-based form."
+    ]
   },
   {
     id: 11,
-    name: "Car air freshener",
-    tagline: "",
-    description: "",
+    name: "Car Air Freshener",
+    tagline: "Refresh your ride.",
+    description: "Transform your car into a fragrant haven. This freshener blends energizing and comforting notes for a long-lasting, refreshing driving experience.",
     price: 1500,
     imageSrc: "/lovable-uploads/carairfreshner.png",
     fragranceNotes: {
-      top: ["Bergamot", "Pink Pepper", "Cardamom"],
-      middle: ["Rose", "Jasmine", "Cinnamon"],
-      base: ["Amber", "Sandalwood", "Musk"]
+      top: ["Citrus Zest", "Green Apple"],
+      middle: ["Ocean Breeze", "Lavender"],
+      base: ["Cedarwood", "Amber"]
     },
-    categories: ["Spicy", "Woody"],
-    longevity: "10-12 hours",
-    sillage: "Strong",
-    occasions: ["Evening", "Winter", "Formal"],
+    categories: ["Fresh", "Citrus"],
+    longevity: "5-7 days",
+    sillage: "Light",
+    occasions: ["Driving", "Daily Use"],
     experience: [
-      "Mystical Allure",
-      "Timeless Elegance",
-      "Sensual Warmth",
-      "Bold Intrigue",
-      "Effortless Sophistication",
-      "Unforgettable Presence",
-      "Feminine Mystery",
-      "Emotional Depth"
+      "Instant Freshness",
+      "Clean Ambience",
+      "Crisp Energy",
+      "Long-Lasting Fragrance"
     ],
-    whyChoose: ["Noir is a statement of elegance, mystery, and sensuality. It becomes part of you with every wear, enveloping you in an unforgettable trail of luxury and emotional depth."]
-  
+    whyChoose: [
+      "Designed specifically for automotive environments, it eliminates odors and provides a pleasant, uplifting atmosphere."
+    ]
   },
+  {
+    id: 12,
+    name: "Ghilaaf-e-Kaaba Attar",
+    tagline: "Sacred essence of tradition.",
+    description: "A spiritual scent inspired by the sacred Ghilaaf-e-Kaaba. With deep, resinous notes and a touch of floral elegance, it's perfect for prayer and reflection.",
+    price: 1000,
+    imageSrc: "/lovable-uploads/gluf e kaaba.png",
+    fragranceNotes: {
+      top: ["Oudh", "Frankincense"],
+      middle: ["Rose", "Myrrh"],
+      base: ["Amber", "Musk"]
+    },
+    categories: ["Spiritual", "Resinous"],
+    longevity: "12-14 hours",
+    sillage: "Strong",
+    occasions: ["Prayer", "Religious Events"],
+    experience: [
+      "Sacred Serenity",
+      "Emotional Connection",
+      "Timeless Rituals",
+      "Spiritual Upliftment"
+    ],
+    whyChoose: [
+      "An attar that echoes the spiritual aura of the Holy Kaaba — powerful, calming, and rooted in sacred tradition."
+    ]
+  },
+  {
+    id: 13,
+    name: "Humidifier",
+    tagline: "Breathe better, live better.",
+    description: "A smart humidifier designed to improve air quality while optionally diffusing your favorite essential oils or fragrances. Ideal for homes and workspaces.",
+    price: 2500,
+    imageSrc: "/lovable-uploads/humidifier.png",
+    fragranceNotes: {
+      top: [],
+      middle: [],
+      base: []
+    },
+    categories: ["Electronic", "Wellness"],
+    longevity: "Continuous (as per water level)",
+    sillage: "Varies with use",
+    occasions: ["Home", "Office", "Sleep"],
+    experience: [
+      "Clean Moisture Flow",
+      "Relaxed Breathing",
+      "Soothing Environment",
+      "Fragrance Diffusion (Optional)"
+    ],
+    whyChoose: [
+      "Improves humidity and can double as an aroma diffuser — great for dry climates and respiratory comfort."
+    ]
+  },
+  {
+    id: 14,
+    name: "Channel 5 Pocket Perfume",
+    tagline: "Luxury in your pocket.",
+    description: "Inspired by the iconic Chanel No.5, this pocket perfume offers an elegant floral aldehyde blend, made convenient for daily use on-the-go.",
+    price: 700,
+    imageSrc: "/lovable-uploads/pocket perfume.png",
+    fragranceNotes: {
+      top: ["Aldehydes", "Neroli", "Ylang-Ylang"],
+      middle: ["Jasmine", "Rose", "Lily of the Valley"],
+      base: ["Vetiver", "Sandalwood", "Vanilla"]
+    },
+    categories: ["Floral", "Classic"],
+    longevity: "6-8 hours",
+    sillage: "Moderate",
+    occasions: ["Formal", "Daily", "Travel"],
+    experience: [
+      "Chic Sophistication",
+      "Classic Feminine Elegance",
+      "Refined Luxury",
+      "Effortless Glamour"
+    ],
+    whyChoose: [
+      "An elegant, portable version of a timeless fragrance for women who appreciate the essence of luxury."
+    ]
+  },
+  {
+    id: 15,
+    name: "Hugo Boss for Women Pocket Perfume",
+    tagline: "Empower your essence.",
+    description: "A refreshing, modern scent for the confident woman. Fruity, floral, and woody notes make it perfect for everyday strength and elegance.",
+    price: 700,
+    imageSrc: "/lovable-uploads/woman pocket perfume.png",
+    fragranceNotes: {
+      top: ["Green Apple", "Mandarin"],
+      middle: ["White Flowers", "Freesia"],
+      base: ["Cedarwood", "Amber", "Musk"]
+    },
+    categories: ["Fruity", "Floral", "Woody"],
+    longevity: "5-7 hours",
+    sillage: "Moderate",
+    occasions: ["Office", "Casual", "Day Out"],
+    experience: [
+      "Confident Charm",
+      "Fresh Sophistication",
+      "Modern Femininity",
+      "Subtle Empowerment"
+    ],
+    whyChoose: [
+      "Tailored for the modern woman — compact, refreshing, and bold enough to leave a lasting impression."
+    ]
+  }
+
 ];
 
 export const getUniqueCategories = () => {
