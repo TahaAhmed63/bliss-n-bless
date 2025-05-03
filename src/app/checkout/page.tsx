@@ -178,14 +178,14 @@ const Checkout = () => {
                       <div className="mt-2 flex justify-between items-center">
                         <div className="flex items-center space-x-2">
                           <button 
-                            onClick={() => updateQuantity(item.id, item.quantity - 1)}
+                            onClick={() => updateQuantity(Number(item.id), item.quantity - 1)}
                             className="text-xs w-5 h-5 flex items-center justify-center bg-luxury-gray rounded-sm"
                           >
                             -
                           </button>
                           <span className="text-sm">{item.quantity}</span>
                           <button 
-                            onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                            onClick={() => updateQuantity(Number(item.id), item.quantity + 1)}
                             className="text-xs w-5 h-5 flex items-center justify-center bg-luxury-gray rounded-sm"
                           >
                             +

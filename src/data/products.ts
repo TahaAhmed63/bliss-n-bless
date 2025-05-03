@@ -33,14 +33,14 @@ export const products: Product[] = [
     whyChoose: ["Mukhallat is more than just a fragrance; it's an emotional experience. As it evolves on your skin, it creates an aromatic journey that unfolds slowly, offering a meditative, luxurious sensation that connects you to ancient traditions. Whether worn daily or for special occasions, Mukhallat Inspired Perfume offers a timeless, lasting impression of sumptuous luxury and spiritual richness."],
     variants: [
       {
-        id: "intense",
+        id:25,
         name: "Mokhalat *2",
         price: 2500,
         imageSrc: "/lovable-uploads/New Project (44).png",
         description: "A more concentrated version with enhanced oud and incense notes for a deeper, more mysterious experience."
       },
       {
-        id: "limited",
+        id: 26,
         name: "Mokhalat *4",
         price: 1500,
         description: "Enriched with rare agarwood and saffron from Kashmir, packaged in a hand-crafted crystal bottle.",
