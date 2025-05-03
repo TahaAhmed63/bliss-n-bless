@@ -1,6 +1,6 @@
 
 export interface ProductVariant {
-  id: number ;
+  id: any;
   name: string;
   price?: number;
   description?: string;
@@ -9,7 +9,7 @@ export interface ProductVariant {
 
 
 export interface Product {
-  id: number | string;
+  id: any;
   name: string;
   tagline: string;
   description: string;
