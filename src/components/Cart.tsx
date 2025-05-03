@@ -117,7 +117,7 @@ const Cart = () => {
                       </div>
                       
                       <span className="text-gold text-sm font-medium">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        RS{(item.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -128,7 +128,7 @@ const Cart = () => {
             <div className="border-t border-luxury-gray pt-4">
               <div className="flex justify-between mb-2">
                 <span className="text-gray-400">Subtotal</span>
-                <span className="text-gray-200">${totalPrice.toFixed(2)}</span>
+                <span className="text-gray-200">RS{totalPrice.toFixed(2)}</span>
               </div>
               <div className="flex justify-between mb-6">
                 <span className="text-gray-400">Shipping</span>
