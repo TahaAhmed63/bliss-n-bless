@@ -230,7 +230,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
               {/* Price and Add to Cart Section */}
               <div className="flex justify-between items-center mb-4">
                 <span className="text-xl md:text-2xl text-gold font-cormorant font-semibold">
-                  ${currentProduct.price}
+                  RS{currentProduct.price}
                 </span>
                 
                 <div className="flex items-center">
