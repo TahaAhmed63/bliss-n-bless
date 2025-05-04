@@ -126,7 +126,7 @@ const BestSellingSection: React.FC<BestSellingSectionProps> = ({ onProductSelect
                 {item.product && (
                   <div className="mb-4 flex items-center gap-2">
                     <span className="inline-block bg-gold/90 text-black text-sm px-3 py-1 rounded">
-                      ${item.product.price}
+                      RS{item.product.price}
                     </span>
                     
                     {item.hasVariants && (

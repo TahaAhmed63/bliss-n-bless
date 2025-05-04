@@ -45,7 +45,7 @@ const Home = () => {
       
       <div className="min-h-screen bg-luxury-black text-white">
         {/* Header hero */}
-        <header className="relative min-h-[60vh] flex items-center justify-center">
+        <header className="relative min-h-[70vh] flex items-center justify-center bg-[url('/lovable-uploads/banner1.png')] bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-luxury-black/50"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-luxury-black via-transparent to-luxury-black"></div>
