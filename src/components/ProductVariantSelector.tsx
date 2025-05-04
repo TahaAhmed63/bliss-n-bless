@@ -42,7 +42,7 @@ const ProductVariantSelector: React.FC<ProductVariantSelectorProps> = ({
           <div className="flex items-center justify-between">
             <div className="flex-1">
               <p className="text-sm text-gray-200">Standard Edition</p>
-              <p className="text-xs text-gray-400">${baseProduct.price}</p>
+              <p className="text-xs text-gray-400">RS{baseProduct.price}</p>
             </div>
             <div className={cn(
               "w-4 h-4 rounded-full border",
@@ -64,7 +64,7 @@ const ProductVariantSelector: React.FC<ProductVariantSelectorProps> = ({
             <div className="flex items-center justify-between">
               <div className="flex-1">
                 <p className="text-sm text-gray-200">{variant.name}</p>
-                <p className="text-xs text-gray-400">${variant.price || baseProduct.price}</p>
+                <p className="text-xs text-gray-400">RS{variant.price || baseProduct.price}</p>
                 {variant.description && (
                   <p className="text-xs text-gray-500 mt-1 italic">{variant.description}</p>
                 )}
