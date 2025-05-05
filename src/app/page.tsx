@@ -45,19 +45,19 @@ const Home = () => {
       
       <div className="min-h-screen bg-luxury-black text-white">
         {/* Header hero */}
-        <header className="relative min-h-[70vh] flex items-center justify-center bg-[url('/lovable-uploads/newbanner.png')] bg-cover bg-center bg-no-repeat">
+        <header className="relative min-h-[53vh] md:min-h-[70vh] flex items-center justify-center bg-[url('/lovable-uploads/mainimg1.png')] md:bg-[url('/lovable-uploads/newbanner.png')] bg-contain md:bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute inset-0 bg-luxury-black/50"></div>
             <div className="absolute inset-0 bg-gradient-to-b from-luxury-black via-transparent to-luxury-black"></div>
           </div>
           
           <div className="luxury-container relative z-10 text-center mt-20">
-            <h1 className="main-title text-4xl md:text-5xl lg:text-6xl font-cormorant font-semi-bold mb-6">
+            <h1 className="main-title text-3xl md:text-5xl lg:text-6xl font-cormorant font-semi-bold mb-4 leading-tight">
               {Array.from("Luxury Fragrances").map((char, index) => (
                 <span key={index} className="inline-block">{char === " " ? "\u00A0" : char}</span>
               ))}
             </h1>
-            <p className="main-subtitle text-gray-300 text-lg max-w-xl mx-auto">
+            <p className="main-subtitle text-gray-300 text-base md:text-lg max-w-xl mx-auto leading-relaxed">
               Discover our collection of exquisite perfumes, crafted with the finest ingredients to create unforgettable sensory experiences.
             </p>
           </div>
