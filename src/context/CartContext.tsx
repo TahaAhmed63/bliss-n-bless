@@ -67,8 +67,11 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const removeFromCart = (productId: number) => {
     setCart(prevCart => {
       const itemToRemove = prevCart.find(item => item.id === productId);
+      console.log(itemToRemove)
       if (itemToRemove) {
         toast.info(`Removed: ${itemToRemove.name} from cart`);
+      }else{
+        console.log('remove not happen')
       }
       return prevCart.filter(item => item.id !== productId);
     });

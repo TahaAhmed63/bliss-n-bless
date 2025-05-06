@@ -166,7 +166,7 @@ const Checkout = () => {
                       <div className="flex justify-between">
                         <h4 className="text-sm font-medium">{item.name}</h4>
                         <button 
-                          onClick={() => removeFromCart(Number(item.id))}
+                          onClick={() => removeFromCart(item?.id)}
                           className="text-gray-400 hover:text-gold"
                         >
                           <X size={14} />
