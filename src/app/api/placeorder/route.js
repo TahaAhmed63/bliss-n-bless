@@ -84,7 +84,7 @@ export async function POST(req) {
     // Also send an admin notification
     const adminEmail = {
       from: process.env.EMAIL_USER || 'ataha6381@gmail.com',
-      to: process.env.EMAIL_USER || 'omerfarooqyear10@gmail.com',
+      to: process.env.RECIPIENT_EMAIL || 'omerfarooqyear10@gmail.com',
       subject: 'New Order Received',
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
