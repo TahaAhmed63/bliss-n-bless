@@ -66,7 +66,7 @@ const Footer = () => {
         <Separator className="my-8 bg-luxury-gray" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs text-gray-500">© {new Date().getFullYear()} Luxury Fragrances. All rights reserved.</p>
+          <p className="text-xs text-gray-500">© {new Date().getFullYear()} Bliss n Bless. All rights reserved. Powered By <a href="https://www.vortexsolution.io/" className="hover:opacity-80"><span className="text-purple-500">Vortex</span><span className="text-[#0066ff]">Solution</span></a>.io</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <a href="#" className="text-xs text-gray-500 hover:text-gray-400">Privacy Policy</a>
             <a href="#" className="text-xs text-gray-500 hover:text-gray-400">Terms of Service</a>

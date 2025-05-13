@@ -42,15 +42,15 @@ export async function POST(req) {
             <table style="width: 100%; border-collapse: collapse;">
               <tr>
                 <td style="padding: 10px 0;">Subtotal</td>
-                <td style="text-align: right;">$${orderData.subtotal.toFixed(2)}</td>
+                <td style="text-align: right;">Rs ${orderData.subtotal.toFixed(2)}</td>
               </tr>
               <tr>
                 <td style="padding: 10px 0;">Shipping</td>
-                <td style="text-align: right;">$${orderData?.shipping ? orderData.shipping.toFixed(2):""}</td>
+                <td style="text-align: right;">Rs ${orderData?.shipping ? orderData.shipping.toFixed(2):""}</td>
               </tr>
               <tr>
                 <td style="padding: 10px 0;">Tax</td>
-                <td style="text-align: right;">$${orderData?.tax ? orderData?.tax.toFixed(2):""}</td>
+                <td style="text-align: right;">Rs ${orderData?.tax ? orderData?.tax.toFixed(2):""}</td>
               </tr>
               <tr style="font-weight: bold;">
                 <td style="padding: 10px 0; border-top: 2px solid #eee;">Total</td>
@@ -94,7 +94,7 @@ export async function POST(req) {
             <p><strong>Customer:</strong> ${orderData.customer.firstName} ${orderData.customer.lastName}</p>
             <p><strong>Email:</strong> ${orderData.customer.email}</p>
             <p><strong>Payment Method:</strong> ${orderData.paymentMethod === 'cod' ? 'Cash on Delivery' : 'Credit/Debit Card'}</p>
-            <p><strong>Total Amount:</strong> $${orderData.total.toFixed(2)}</p>
+            <p><strong>Total Amount:</strong> Rs ${orderData.total.toFixed(2)}</p>
             
             <h3 style="border-bottom: 1px solid #eee; padding-bottom: 10px;">Order Items</h3>
             <div style="margin: 20px 0;">
