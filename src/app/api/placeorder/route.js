@@ -16,7 +16,7 @@ export async function POST(req) {
     
     // Format order items for email
     const items = orderData.items.map(item => 
-      `${item.name} x ${item.quantity} - $${(item.price * item.quantity).toFixed(2)}`
+      `${item.name} x ${item.quantity} - Rs ${(item.price * item.quantity).toFixed(2)}`
     ).join('\n');
     
     // Create email content
@@ -54,7 +54,7 @@ export async function POST(req) {
               </tr>
               <tr style="font-weight: bold;">
                 <td style="padding: 10px 0; border-top: 2px solid #eee;">Total</td>
-                <td style="text-align: right; border-top: 2px solid #eee;">$${orderData.total.toFixed(2)}</td>
+                <td style="text-align: right; border-top: 2px solid #eee;">Rs ${orderData.total.toFixed(2)}</td>
               </tr>
             </table>
             
