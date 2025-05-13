@@ -21,7 +21,7 @@ export async function POST(req) {
     
     // Create email content
     const emailContent = {
-      from: process.env.EMAIL_USER || 'omerfarooqyear10@gmail.com',
+      from: process.env.EMAIL_USER || 'ataha6381@gmail.com',
       to: orderData.customer.email,
       subject: 'Your Order Confirmation',
       html: `
@@ -83,7 +83,7 @@ export async function POST(req) {
     
     // Also send an admin notification
     const adminEmail = {
-      from: process.env.EMAIL_USER || 'omerfarooqyear10@gmail.com',
+      from: process.env.EMAIL_USER || 'ataha6381@gmail.com',
       to: process.env.EMAIL_USER || 'omerfarooqyear10@gmail.com',
       subject: 'New Order Received',
       html: `
