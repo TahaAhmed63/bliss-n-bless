@@ -83,12 +83,12 @@ const Navbar = () => {
           >
             HOME
           </Link>
-          <Link 
+          {/* <Link 
             href="/shop" 
             className={`nav-item text-sm tracking-wider hover:text-gold transition-colors`}
           >
             SHOP
-          </Link>
+          </Link> */}
           <Link 
             href="/checkout" 
             className={`nav-item text-sm tracking-wider hover:text-gold transition-colors`}
