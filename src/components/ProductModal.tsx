@@ -111,7 +111,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
         <div className="flex flex-col md:flex-row max-h-[90vh] overflow-hidden">
           <div className="md:w-5/12 h-[200px] md:h-auto">
             <div className="h-full relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-luxury-black/40 via-transparent to-transparent z-10"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-luxury-black/40 via-transparent to-transparent z-0"></div>
               <Image 
                 src={currentProduct.imageSrc} 
                 alt={currentProduct.name}
