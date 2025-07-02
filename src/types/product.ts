@@ -8,13 +8,19 @@ export interface ProductVariant {
 }
 
 
+export interface ProductReview {
+  name: string;
+  review: string;
+  rating?: number;
+}
+
 export interface Product {
   id: any;
   name: string;
   tagline: string;
   description: string;
   price: number;
-  reviews:string[];
+  reviews: ProductReview[];
   imageSrc: string;
   fragranceNotes: {
     top: string[];
