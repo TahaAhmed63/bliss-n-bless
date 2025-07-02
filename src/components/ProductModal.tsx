@@ -265,7 +265,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
                 <div className="border-t border-luxury-gray my-3 pt-3">
                   <h4 className="text-gold text-xs font-medium mb-2">CUSTOMER REVIEWS</h4>
                   <div className="space-y-3 max-h-40 overflow-y-auto pr-1">
-                    {product.reviews.map((review, idx) => {
+                    {product.reviews.map((review:string[], idx) => {
                       // Assign a random rating of 4 or 5 for demo purposes
                       const rating = (idx % 3 === 0 ? 4 : 5);
                       return (
