@@ -267,7 +267,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
                   <div className="space-y-3 max-h-40 overflow-y-auto pr-1">
                     {product.reviews.map((review, idx) => {
                       // Assign a random rating of 4 or 5 for demo purposes
-                      const rating = review.rating || (idx % 3 === 0 ? 4 : 5);
+                      const rating = (idx % 3 === 0 ? 4 : 5);
                       return (
                         <div key={idx} className="bg-luxury-dark/60 rounded p-2">
                           <div className="flex items-center gap-2 mb-1">
