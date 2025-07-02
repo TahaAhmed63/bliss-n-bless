@@ -14,6 +14,7 @@ export interface Product {
   tagline: string;
   description: string;
   price: number;
+  reviews:string[];
   imageSrc: string;
   fragranceNotes: {
     top: string[];
