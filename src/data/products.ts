@@ -48,9 +48,21 @@ export const products: Product[] = [
       },
      
     ],
-    isMensBestSelling: true
-    
-    
+    isMensBestSelling: true,
+    reviews: [
+      {
+        name: "Ayesha Khan",
+        review: "Absolutely luxurious! The Mukhallat Inspired Perfume lasts all day and truly feels like a journey through tradition and opulence. Highly recommended for special occasions.",
+      },
+      {
+        name: "Imran Siddiqui",
+        review: "A deep, spiritual scent that stands out. The oud and incense notes are perfectly balanced. Will buy again!",
+      },
+      {
+        name: "Sarmad Ali",
+        review: "Long-lasting and unique. Reminds me of traditional gatherings in Lahore.",
+      }
+    ]
   },
   {
     id: 2,
@@ -80,7 +92,17 @@ export const products: Product[] = [
       "Romantic Nostalgia",
       " Timeless Beauty"
     ],
-    whyChoose: ["APOM – An Emotional Journey That Evolves With You Feel the blend of lightness and depth, of freshness and warmth, as APOM evolves on your skin. This fragrance becomes a part of you, offering an emotional experience that is vibrant, grounded, and composed, enhancing your natural radiance."]
+    whyChoose: ["APOM – An Emotional Journey That Evolves With You Feel the blend of lightness and depth, of freshness and warmth, as APOM evolves on your skin. This fragrance becomes a part of you, offering an emotional experience that is vibrant, grounded, and composed, enhancing your natural radiance."],
+    reviews: [
+      {
+        name: "Sadia Malik",
+        review: "APOM is my new signature scent! It’s elegant, fresh, and lasts for hours. I get compliments every time I wear it.",
+      },
+      {
+        name: "Bilal Qureshi",
+        review: "A beautiful blend of florals and woods. It feels both modern and classic. Perfect for daily wear.",
+      }
+    ]
   
   },
   {
@@ -111,7 +133,13 @@ export const products: Product[] = [
       "Composed Poise",
       " Elevated Everyday Moments"
     ],
-    whyChoose: ["This perfume is a modern classic—bold yet restrained, timeless yet contemporary. Itsdistinctive aldehydic opening, followed by the delicate floral heart and warm, woody base,creates a multidimensional experience that evolves with confidence, leaving a lasting impression."]
+    whyChoose: ["This perfume is a modern classic—bold yet restrained, timeless yet contemporary. Itsdistinctive aldehydic opening, followed by the delicate floral heart and warm, woody base,creates a multidimensional experience that evolves with confidence, leaving a lasting impression."],
+    reviews: [
+      {
+        name: "Nadia Jamil",
+        review: "Chanel 5 Inspired Perfume is pure elegance. The floral notes are divine and it makes me feel so confident.",
+      }
+    ]
   
   },
   {
@@ -142,7 +170,25 @@ export const products: Product[] = [
       "Heritage Appreciation",
       "Delicate Strength"
     ],
-    whyChoose: ["Miss Dior Inspired Perfume is more than just a scent—it's an emotional journey. It bridges the gap between traditional femininity and modern independence, enhancing your sense of timeless appeal and ensuring you feel empowered, graceful, and effortlessly chic."]
+    whyChoose: ["Miss Dior Inspired Perfume is more than just a scent—it's an emotional journey. It bridges the gap between traditional femininity and modern independence, enhancing your sense of timeless appeal and ensuring you feel empowered, graceful, and effortlessly chic."],
+    reviews: [
+      {
+        name: "Hira Shah",
+        review: "Miss Dior Inspired Perfume is so fresh and feminine. It’s perfect for spring and makes me feel beautiful.",
+      },
+      {
+        name: "Adeel Farooq",
+        review: "Bought this for my wife and she adores it. The floral notes are just right and it lasts all day.",
+      },
+      {
+        name: "Mahnoor Aziz",
+        review: "Very elegant and light. I wear it to work every day.",
+      },
+      {
+        name: "Shoaib Akhtar",
+        review: "Gifted to my sister, she loved the scent and the packaging!",
+      }
+    ]
   },
   {
     id: 5,
@@ -168,7 +214,21 @@ export const products: Product[] = [
       "Exoticism and Romance",
       "Nostalgia and Cultural Pride"
     ],
-    whyChoose: ["Kurdijan is not just a fragrance; it’s an experience that connects you to culture, nature, and your inner strength. It evolves with every wear, offering warmth, richness, and deep emotional resonance."]
+    whyChoose: ["Kurdijan is not just a fragrance; it’s an experience that connects you to culture, nature, and your inner strength. It evolves with every wear, offering warmth, richness, and deep emotional resonance."],
+    reviews: [
+      {
+        name: "Zainab Raza",
+        review: "Kurdijan Inspired Perfume is warm, mysterious, and empowering. I love the Middle Eastern touch!",
+      },
+      {
+        name: "Usman Tariq",
+        review: "A unique scent that stands out. The saffron and amber are my favorite notes. Highly recommended.",
+      },
+      {
+        name: "Aqsa Noor",
+        review: "Very rich and long-lasting. Reminds me of my travels to the Middle East.",
+      }
+    ]
   
   },
   {
@@ -199,7 +259,13 @@ export const products: Product[] = [
       "Contemplative Mood",
       "Seasonal Coziness"
     ],
-    whyChoose: ["Noir Extreme brings together sweet and spicy, light and dark elements—creating a powerful emotional experience. It enhances your presence with luxury, depth, and a bold, unforgettable allure."]
+    whyChoose: ["Noir Extreme brings together sweet and spicy, light and dark elements—creating a powerful emotional experience. It enhances your presence with luxury, depth, and a bold, unforgettable allure."],
+    reviews: [
+      {
+        name: "Rabia Yousaf",
+        review: "Noir Extreme Inspired Perfume is bold and luxurious. Perfect for evenings and special events.",
+      }
+    ]
   },
   {
     id: 7,
@@ -229,6 +295,20 @@ export const products: Product[] = [
       "Lasting Impression"
     ],
     whyChoose: ["This fragrance defines you with timeless elegance, sophisticated masculinity, and effortless charm, ensuring you leave a strong, memorable impression wherever you go."],
+    reviews: [
+      {
+        name: "Ali Raza",
+        review: "Hugo Boss for Men Inspired Perfume is fresh, masculine, and lasts all day. My go-to for work!",
+      },
+      {
+        name: "Shahbaz Ahmed",
+        review: "A classic scent that never disappoints. The woody notes are just perfect.",
+      },
+      {
+        name: "Hassan Tariq",
+        review: "Very energizing and sophisticated. I use it for all my meetings.",
+      }
+    ]
 
   },
   {
@@ -258,7 +338,13 @@ export const products: Product[] = [
       "A Lasting Impression"
     ],
     whyChoose: ["Hugo Boss for Women captures your essence—elegance, strength, and beauty—while offering a luxurious, empowering fragrance perfect for any occasion."],
-    isWomensBestSelling: true
+    isWomensBestSelling: true,
+    reviews: [
+      {
+        name: "Sana Mir",
+        review: "Hugo Boss for Women Inspired Perfume is elegant and empowering. I feel confident every time I wear it.",
+      }
+    ]
   },
 
   {
@@ -287,7 +373,21 @@ export const products: Product[] = [
       "Feminine Mystery",
       "Emotional Depth"
     ],
-    whyChoose: ["Noir is a statement of elegance, mystery, and sensuality. It becomes part of you with every wear, enveloping you in an unforgettable trail of luxury and emotional depth."]
+    whyChoose: ["Noir is a statement of elegance, mystery, and sensuality. It becomes part of you with every wear, enveloping you in an unforgettable trail of luxury and emotional depth."],
+    reviews: [
+      {
+        name: "Farah Naz",
+        review: "Noir Inspired Perfume is mysterious and elegant. I love the spicy and woody notes!",
+      },
+      {
+        name: "Junaid Alam",
+        review: "A bold scent that makes a statement. Perfect for winter evenings.",
+      },
+      {
+        name: "Adeel Shafqat",
+        review: "Very unique and memorable. My friends always ask about it.",
+      }
+    ]
   
   },
   {
@@ -314,6 +414,12 @@ export const products: Product[] = [
     ],
     whyChoose: [
       "Crafted from pure jasmine extracts, this attar is ideal for those who appreciate timeless floral elegance in a natural oil-based form."
+    ],
+    reviews: [
+      {
+        name: "Bushra Anwar",
+        review: "Jasmine Attar is so calming and pure. The floral scent is perfect for daily wear.",
+      }
     ]
   },
   {
@@ -340,6 +446,20 @@ export const products: Product[] = [
     ],
     whyChoose: [
       "Designed specifically for automotive environments, it eliminates odors and provides a pleasant, uplifting atmosphere."
+    ],
+    reviews: [
+      {
+        name: "Fahad Majeed",
+        review: "Car Air Freshener keeps my car smelling fresh for days. The citrus notes are very uplifting!",
+      },
+      {
+        name: "Nimra Aslam",
+        review: "Easy to use and long-lasting. My family loves the clean scent in our car.",
+      },
+      {
+        name: "Areeba Shahid",
+        review: "Great for long drives. The scent is not overpowering and lasts a week.",
+      }
     ]
   },
   {
@@ -366,6 +486,12 @@ export const products: Product[] = [
     ],
     whyChoose: [
       "An attar that echoes the spiritual aura of the Holy Kaaba — powerful, calming, and rooted in sacred tradition."
+    ],
+    reviews: [
+      {
+        name: "Shazia Parveen",
+        review: "Ghilaaf-e-Kaaba Attar is truly spiritual. It’s perfect for prayer and reflection.",
+      }
     ]
   },
   {
@@ -392,6 +518,20 @@ export const products: Product[] = [
     ],
     whyChoose: [
       "Improves humidity and can double as an aroma diffuser — great for dry climates and respiratory comfort."
+    ],
+    reviews: [
+      {
+        name: "Adeel Hussain",
+        review: "The humidifier works great and the optional fragrance feature is a bonus. My room feels so much better!",
+      },
+      {
+        name: "Mehwish Rauf",
+        review: "Easy to use and very effective. I use it every night for better sleep.",
+      },
+      {
+        name: "Sundas Iqbal",
+        review: "Very quiet and efficient. The air feels fresher in my room.",
+      }
     ]
   },
   {
@@ -418,6 +558,12 @@ export const products: Product[] = [
     ],
     whyChoose: [
       "An elegant, portable version of a timeless fragrance for women who appreciate the essence of luxury."
+    ],
+    reviews: [
+      {
+        name: "Samina Waqar",
+        review: "Channel 5 Pocket Perfume is so convenient and smells just like the original. Perfect for my purse!",
+      }
     ]
   },
   {
@@ -444,6 +590,20 @@ export const products: Product[] = [
     ],
     whyChoose: [
       "Tailored for the modern woman — compact, refreshing, and bold enough to leave a lasting impression."
+    ],
+    reviews: [
+      {
+        name: "Nimra Zafar",
+        review: "Hugo Boss for Women Pocket Perfume is fresh and empowering. I love the fruity notes!",
+      },
+      {
+        name: "Waleed Akram",
+        review: "Perfect for on-the-go. The scent is long-lasting and very pleasant.",
+      },
+      {
+        name: "Aqib Javed",
+        review: "Compact and easy to carry. Smells great and lasts for hours.",
+      }
     ]
   }
 

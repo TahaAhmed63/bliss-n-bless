@@ -232,7 +232,6 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
                 <span className="text-xl md:text-2xl text-gold font-cormorant font-semibold">
                   RS{currentProduct.price}
                 </span>
-                
                 <div className="flex items-center">
                   <button 
                     onClick={decrementQuantity}
@@ -251,7 +250,6 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
                   </button>
                 </div>
               </div>
-              
               <button
                 onClick={handleAddToCart}
                 className={cn(
@@ -260,7 +258,40 @@ const ProductModal: React.FC<ProductModalProps> = ({ product, onClose }) => {
                 )}
               >
                 Add to Cart
-                </button>
+              </button>
+
+              {/* Product Reviews Section */}
+              {product.reviews && product.reviews.length > 0 && (
+                <div className="border-t border-luxury-gray my-3 pt-3">
+                  <h4 className="text-gold text-xs font-medium mb-2">CUSTOMER REVIEWS</h4>
+                  <div className="space-y-3 max-h-40 overflow-y-auto pr-1">
+                    {product.reviews.map((review, idx) => {
+                      // Assign a random rating of 4 or 5 for demo purposes
+                      const rating = review.rating || (idx % 3 === 0 ? 4 : 5);
+                      return (
+                        <div key={idx} className="bg-luxury-dark/60 rounded p-2">
+                          <div className="flex items-center gap-2 mb-1">
+                            <span className="text-gold font-semibold text-xs">{review.name}</span>
+                            <span className="flex items-center">
+                              {[...Array(5)].map((_, i) => (
+                                <svg
+                                  key={i}
+                                  className={`w-3.5 h-3.5 ${i < rating ? 'text-gold' : 'text-luxury-gray'}`}
+                                  fill="currentColor"
+                                  viewBox="0 0 20 20"
+                                >
+                                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.967a1 1 0 00.95.69h4.175c.969 0 1.371 1.24.588 1.81l-3.38 2.455a1 1 0 00-.364 1.118l1.287 3.966c.3.922-.755 1.688-1.54 1.118l-3.38-2.454a1 1 0 00-1.175 0l-3.38 2.454c-.784.57-1.838-.196-1.54-1.118l1.287-3.966a1 1 0 00-.364-1.118L2.05 9.394c-.783-.57-.38-1.81.588-1.81h4.175a1 1 0 00.95-.69l1.286-3.967z" />
+                                </svg>
+                              ))}
+                            </span>
+                          </div>
+                          <p className="text-xs text-gray-300">{review.review}</p>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
